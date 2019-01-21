@@ -308,12 +308,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NBLShowPicture_Example/Pods-NBLShowPicture_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/NBLShowPicture/NBLShowPicture.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NBLShowPicture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

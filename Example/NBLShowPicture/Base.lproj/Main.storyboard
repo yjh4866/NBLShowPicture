@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,10 +20,48 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0pa-NR-Bct">
+                                <rect key="frame" x="37.5" y="133.5" width="300" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="r5y-K0-SX7"/>
+                                    <constraint firstAttribute="height" constant="400" id="wSv-vb-75r"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TN6-39-5C8">
+                                <rect key="frame" x="112.5" y="587" width="150" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="5p9-DB-35S"/>
+                                    <constraint firstAttribute="height" constant="60" id="Ve9-Hd-vSU"/>
+                                </constraints>
+                                <state key="normal" title="全屏查看"/>
+                                <connections>
+                                    <action selector="clickShowPicture:" destination="whP-gf-Uak" eventType="touchUpInside" id="ZNd-tL-dgM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="0pa-NR-Bct" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="3zH-Dw-8TF"/>
+                            <constraint firstItem="0pa-NR-Bct" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="Hlm-U0-WEW"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="TN6-39-5C8" secondAttribute="bottom" constant="20" id="oqN-p8-rSr"/>
+                            <constraint firstItem="TN6-39-5C8" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="zQM-hp-A0E"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2dW-86-Dt6" appends="YES" id="mN4-d3-x6r"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="0pa-NR-Bct" id="Jsy-dC-bSS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2dW-86-Dt6">
+                    <connections>
+                        <action selector="tapImageView:" destination="whP-gf-Uak" id="fn5-gn-fg4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="433"/>
         </scene>
