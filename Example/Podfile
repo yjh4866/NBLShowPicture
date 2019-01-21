@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'NBLShowPicture_Example' do
+  pod 'NBLShowPicture', :path => '../'
+
+  target 'NBLShowPicture_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end

@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - NBLShowPicture (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - NBLShowPicture (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  NBLShowPicture:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  NBLShowPicture: f11de1413a4c4ec4530eac4cbe45470099730606
+
+PODFILE CHECKSUM: ca5c5823f37c544d128158804c244283279a6bae
+
+COCOAPODS: 1.5.3
