@@ -9,7 +9,18 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Methods
+
+```objective-c
+[NBLShowPicVC presentPicture:image on:self];
+```
+```objective-c
+[NBLShowPicVC presentWithPicUrl:urlString on:self];
+```
+
 ## Requirements
+* iOS 9.0+
+* ARC
 
 ## Installation
 
