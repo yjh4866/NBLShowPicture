@@ -36,7 +36,7 @@ TODO: Add long description of the pod here.
     'NBLShowPicture' => ['NBLShowPicture/Assets/*.{storyboard}']
   }
 
-  s.public_header_files = 'Pod/Classes/*.h'
+  s.public_header_files = 'NBLShowPicture/Classes/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'SDWebImage'
 end
