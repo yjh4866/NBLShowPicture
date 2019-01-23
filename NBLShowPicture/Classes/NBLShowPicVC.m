@@ -14,31 +14,9 @@
 
 @property (strong, nonatomic) UIView *imageContainer;
 @property (strong, nonatomic) UIImageView *imageView;
-
-@property (nonatomic, strong) UIImage *picture;
-@property (nonatomic, strong) NSString *picUrl;
 @end
 
 @implementation NBLShowPicVC
-
-+ (void)presentPicture:(UIImage *)picture on:(UIViewController *)viewController
-{
-    // 加载Bundle
-    NSBundle *bundle = [NSBundle bundleWithIdentifier:@"org.cocoapods.NBLShowPicture"];
-    // 获取视图控制器
-    NBLShowPicVC *showPicVC = [[UIStoryboard storyboardWithName:@"NBLShowPicture.bundle/NBLShowPicVC" bundle:bundle] instantiateInitialViewController];
-    showPicVC.picture = picture;
-    [viewController presentViewController:showPicVC animated:YES completion:nil];
-}
-+ (void)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController
-{
-    // 加载Bundle
-    NSBundle *bundle = [NSBundle bundleWithIdentifier:@"org.cocoapods.NBLShowPicture"];
-    // 获取视图控制器
-    NBLShowPicVC *showPicVC = [[UIStoryboard storyboardWithName:@"NBLShowPicture.bundle/NBLShowPicVC" bundle:bundle] instantiateInitialViewController];
-    showPicVC.picUrl = picUrl;
-    [viewController presentViewController:showPicVC animated:YES completion:nil];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

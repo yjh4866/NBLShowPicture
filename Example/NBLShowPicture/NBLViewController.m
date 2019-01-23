@@ -8,7 +8,7 @@
 
 #import "NBLViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import <NBLShowPicture/NBLShowPicVC.h>
+#import <NBLShowPicture/NBLShowPicture.h>
 
 @interface NBLViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -32,11 +32,11 @@
 
 - (IBAction)tapImageView:(id)sender
 {
-    [NBLShowPicVC presentPicture:self.imageView.image on:self];
+    [NBLShowPicture presentPicture:self.imageView.image on:self];
 }
 - (IBAction)clickShowPicture:(id)sender
 {
-    [NBLShowPicVC presentWithPicUrl:@"http://bpic.588ku.com/element_water_img/19/01/06/ff168e0e84240ac09c01c25458bef541.jpg" on:self];
+    [NBLShowPicture presentWithPicUrl:@"http://bpic.588ku.com/element_water_img/19/01/06/ff168e0e84240ac09c01c25458bef541.jpg" on:self];
 }
 
 @end

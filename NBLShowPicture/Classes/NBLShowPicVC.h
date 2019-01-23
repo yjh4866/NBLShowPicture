@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NBLShowPicVC : UIViewController
 
-+ (void)presentPicture:(UIImage *)picture on:(UIViewController *)viewController;
-+ (void)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController;
+@property (nonatomic, strong) UIImage *picture;
+@property (nonatomic, strong) NSString *picUrl;
 
 @end
 
