@@ -249,7 +249,7 @@
 				ORGANIZATIONNAME = "杨建红";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = B5JSJJWSP9;
+						DevelopmentTeam = NZBNK9L6AA;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -261,6 +261,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -525,10 +526,11 @@
 			baseConfigurationReference = 44DDA8E7ABB6CD3CABF5E56A /* Pods-NBLShowPicture_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B5JSJJWSP9;
+				DEVELOPMENT_TEAM = NZBNK9L6AA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NBLShowPicture/NBLShowPicture-Prefix.pch";
 				INFOPLIST_FILE = "NBLShowPicture/NBLShowPicture-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,10 +543,11 @@
 			baseConfigurationReference = F32BEACF0F5F690ABA37E349 /* Pods-NBLShowPicture_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B5JSJJWSP9;
+				DEVELOPMENT_TEAM = NZBNK9L6AA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NBLShowPicture/NBLShowPicture-Prefix.pch";
 				INFOPLIST_FILE = "NBLShowPicture/NBLShowPicture-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

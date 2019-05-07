@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)presentPicture:(UIImage *)picture on:(UIViewController *)viewController;
 + (void)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController;
 
++ (void)presentPicturesOrPicUrls:(NSArray *)pics on:(UIViewController *)viewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

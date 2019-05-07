@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NBLShowPicture'
-  s.version          = '0.1.1'
-  s.summary          = '全屏查看图片。Show picture in full screen.'
+  s.version          = '0.2.0'
+  s.summary          = '全屏查看若干张图片。Show picture in full screen.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+全屏查看若干张图片，支持UIImage和图片url。Show picture in full screen.
                        DESC
 
   s.homepage         = 'https://github.com/yjh4866/NBLShowPicture'
@@ -33,7 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'NBLShowPicture/Classes/**/*'
   
   s.resource_bundles = {
-    'NBLShowPicture' => ['NBLShowPicture/Assets/*.{storyboard}']
+    'NBLShowPicture' => ['NBLShowPicture/Assets/*.{xib,storyboard}']
   }
 
   s.public_header_files = 'NBLShowPicture/Classes/*.h'

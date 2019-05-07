@@ -12,20 +12,18 @@
 
 + (void)presentPicture:(UIImage *)picture on:(UIViewController *)viewController
 {
-    // 加载Bundle
-    NSBundle *bundle = [NSBundle bundleForClass:NBLShowPicture.class];
-    // 获取视图控制器
-    NBLShowPicVC *showPicVC = [[UIStoryboard storyboardWithName:@"NBLShowPicture.bundle/NBLShowPicVC" bundle:bundle] instantiateInitialViewController];
-    showPicVC.picture = picture;
-    [viewController presentViewController:showPicVC animated:YES completion:nil];
+    [NBLShowPicture presentPicturesOrPicUrls:@[picture] on:viewController];
 }
 + (void)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController
 {
-    // 加载Bundle
-    NSBundle *bundle = [NSBundle bundleForClass:NBLShowPicture.class];
+    [NBLShowPicture presentPicturesOrPicUrls:@[picUrl] on:viewController];
+}
+
++ (void)presentPicturesOrPicUrls:(NSArray *)pics on:(UIViewController *)viewController
+{
     // 获取视图控制器
-    NBLShowPicVC *showPicVC = [[UIStoryboard storyboardWithName:@"NBLShowPicture.bundle/NBLShowPicVC" bundle:bundle] instantiateInitialViewController];
-    showPicVC.picUrl = picUrl;
+    NBLShowPicVC *showPicVC = [NBLShowPicVC loadViewController];
+    showPicVC.pictures = pics;
     [viewController presentViewController:showPicVC animated:YES completion:nil];
 }
 
