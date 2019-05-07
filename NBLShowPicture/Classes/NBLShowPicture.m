@@ -10,21 +10,20 @@
 
 @implementation NBLShowPicture
 
-+ (void)presentPicture:(UIImage *)picture on:(UIViewController *)viewController
++ (NBLShowPicVC *)presentPicture:(UIImage *)picture on:(UIViewController *)viewController
 {
-    [NBLShowPicture presentPicturesOrPicUrls:@[picture] on:viewController];
+    return [NBLShowPicture presentPicsOrPicUrls:@[picture] withCurrentIndex:0 on:viewController];
 }
-+ (void)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController
++ (NBLShowPicVC *)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController
 {
-    [NBLShowPicture presentPicturesOrPicUrls:@[picUrl] on:viewController];
+    return [NBLShowPicture presentPicsOrPicUrls:@[picUrl] withCurrentIndex:0 on:viewController];
 }
 
-+ (void)presentPicturesOrPicUrls:(NSArray *)pics on:(UIViewController *)viewController
++ (NBLShowPicVC *)presentPicsOrPicUrls:(NSArray *)pics
+                      withCurrentIndex:(NSInteger)index
+                                    on:(UIViewController *)viewController
 {
-    // 获取视图控制器
-    NBLShowPicVC *showPicVC = [NBLShowPicVC loadViewController];
-    showPicVC.pictures = pics;
-    [viewController presentViewController:showPicVC animated:YES completion:nil];
+    return [NBLShowPicVC presentPicsOrPicUrls:pics withCurrentIndex:index on:viewController];
 }
 
 @end

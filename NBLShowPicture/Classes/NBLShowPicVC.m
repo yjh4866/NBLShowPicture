@@ -18,11 +18,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
     // Do any additional setup after loading the view from its nib.
-    
-    for (int i = 0; i < self.pictures.count; i++) {
-        UIImage *picture = self.pictures[i];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
++ (NBLShowPicVC *)presentPicsOrPicUrls:(NSArray *)pictures
+                      withCurrentIndex:(NSInteger)index
+                                    on:(UIViewController *)viewController
+{
+    NBLShowPicVC *showPicVC = [NBLShowPicVC loadViewController];
+    [viewController presentViewController:showPicVC animated:YES completion:nil];
+    // 显示图片
+    for (int i = 0; i < pictures.count; i++) {
+        UIImage *picture = pictures[i];
         // 展现单张图片用的视图
         NBLPictureView *pictureView = [NBLPictureView loadPictureView];
         if ([picture isKindOfClass:[NSString class]]) {
@@ -30,18 +42,20 @@
         } else if ([picture isKindOfClass:[UIImage class]]) {
             pictureView.picture = picture;
         }
-        pictureView.frame = CGRectMake(i*self.view.bounds.size.width, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-        [self.scrollView addSubview:pictureView];
+        pictureView.frame = CGRectMake(i*showPicVC.view.bounds.size.width, 0, showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
+        [showPicVC.scrollView addSubview:pictureView];
     }
     // 滚动范围
-    self.scrollView.contentSize = CGSizeMake(self.pictures.count * self.view.bounds.size.width, self.view.bounds.size.height);
-    self.scrollView.scrollEnabled = self.pictures.count > 1;
+    showPicVC.scrollView.contentSize = CGSizeMake(pictures.count * showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
+    showPicVC.scrollView.scrollEnabled = pictures.count > 1;
+    // 当前要显示的图片
+    showPicVC.scrollView.contentOffset = CGPointMake(index*showPicVC.view.bounds.size.width, 0);
+    //
+    return showPicVC;
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+
+#pragma mark - Private
 
 + (NBLShowPicVC *)loadViewController
 {

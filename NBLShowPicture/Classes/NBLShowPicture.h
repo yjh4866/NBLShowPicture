@@ -6,15 +6,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NBLShowPicVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NBLShowPicture : NSObject
 
-+ (void)presentPicture:(UIImage *)picture on:(UIViewController *)viewController;
-+ (void)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController;
++ (NBLShowPicVC *)presentPicture:(UIImage *)picture on:(UIViewController *)viewController;
++ (NBLShowPicVC *)presentWithPicUrl:(NSString *)picUrl on:(UIViewController *)viewController;
 
-+ (void)presentPicturesOrPicUrls:(NSArray *)pics on:(UIViewController *)viewController;
++ (NBLShowPicVC *)presentPicsOrPicUrls:(NSArray *)pics
+                      withCurrentIndex:(NSInteger)index
+                                    on:(UIViewController *)viewController;
 
 @end
 

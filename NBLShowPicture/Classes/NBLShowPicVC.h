@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NBLShowPicVC : UIViewController
 
-@property (nonatomic, strong) NSArray *pictures;
-
-+ (NBLShowPicVC *)loadViewController;
++ (NBLShowPicVC *)presentPicsOrPicUrls:(NSArray *)pictures
+                      withCurrentIndex:(NSInteger)index
+                                    on:(UIViewController *)viewController;
 
 @end
 

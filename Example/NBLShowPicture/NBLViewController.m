@@ -36,7 +36,7 @@
 }
 - (IBAction)clickShowPicture:(id)sender
 {
-    [NBLShowPicture presentPicturesOrPicUrls:@[@"http://bpic.588ku.com/element_water_img/19/01/06/ff168e0e84240ac09c01c25458bef541.jpg", self.imageView.image] on:self];
+    [NBLShowPicture presentPicsOrPicUrls:@[@"http://bpic.588ku.com/element_water_img/19/01/06/ff168e0e84240ac09c01c25458bef541.jpg", self.imageView.image] withCurrentIndex:1 on:self];
 }
 
 @end
