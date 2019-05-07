@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) UIView *imageContainer;
 @property (strong, nonatomic) UIImageView *imageView;
+
+@property (nonatomic, assign) BOOL kvoFrame;
 @end
 
 @implementation NBLPictureView
@@ -22,6 +24,7 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
+        self.kvoFrame = NO;
         // KVO
         [self addObserver:self forKeyPath:@"picture"
                   options:NSKeyValueObservingOptionNew context:nil];
@@ -35,14 +38,21 @@
 {
     [self removeObserver:self forKeyPath:@"picture"];
     [self removeObserver:self forKeyPath:@"picUrl"];
+    [self removeObserver:self forKeyPath:@"frame"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"picture"]) {
+    if ([keyPath isEqualToString:@"frame"]) {
+        [self resetScroll];
+    }
+    // 设置图片对象
+    else if ([keyPath isEqualToString:@"picture"]) {
         self.imageView.image = self.picture;
         [self resetScroll];
-    } else if ([keyPath isEqualToString:@"picUrl"]) {
+    }
+    // 设置图片url
+    else if ([keyPath isEqualToString:@"picUrl"]) {
         __weak typeof(self) weakSelf = self;
         [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.picUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             if (image) {
@@ -56,6 +66,11 @@
 {
     [super awakeFromNib];
     // Initialization code
+    if (!self.kvoFrame) {
+        [self addObserver:self forKeyPath:@"frame"
+                  options:NSKeyValueObservingOptionNew context:nil];
+        self.kvoFrame = YES;
+    }
     if (nil == self.imageContainer) {
         // 滚动图片用的容器
         self.imageContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
