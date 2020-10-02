@@ -8,10 +8,12 @@
 
 #import "NBLShowPicVC.h"
 #import "NBLShowPicture.h"
-#import "NBLPictureView.h"
 
 @interface NBLShowPicVC () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (nonatomic, strong) NSArray<NBLPictureView *> *pictureViewList;
+@property (nonatomic, weak) NBLPictureView *pictureView;
 @end
 
 @implementation NBLShowPicVC
@@ -31,8 +33,10 @@
                                     on:(UIViewController *)viewController
 {
     NBLShowPicVC *showPicVC = [NBLShowPicVC loadViewController];
+    showPicVC.modalPresentationStyle = UIModalPresentationFullScreen;
     [viewController presentViewController:showPicVC animated:YES completion:nil];
     // 显示图片
+    NSMutableArray *marray = [NSMutableArray array];
     for (int i = 0; i < pictures.count; i++) {
         UIImage *picture = pictures[i];
         // 展现单张图片用的视图
@@ -43,8 +47,10 @@
             pictureView.picture = picture;
         }
         pictureView.frame = CGRectMake(i*showPicVC.view.bounds.size.width, 0, showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
+        [marray addObject:pictureView];
         [showPicVC.scrollView addSubview:pictureView];
     }
+    showPicVC.pictureViewList = marray;
     // 滚动范围
     showPicVC.scrollView.contentSize = CGSizeMake(pictures.count * showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
     showPicVC.scrollView.scrollEnabled = pictures.count > 1;
@@ -52,6 +58,33 @@
     showPicVC.scrollView.contentOffset = CGPointMake(index*showPicVC.view.bounds.size.width, 0);
     //
     return showPicVC;
+}
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSUInteger page = (NSUInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width);
+    NBLPictureView *pictureView = self.pictureViewList[page];
+    if (nil == self.pictureView) {
+        self.pictureView = pictureView;
+        if (self.blockFirstShow) {
+            self.blockFirstShow(page, self.pictureView);
+        }
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSUInteger page = (NSUInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width);
+    NBLPictureView *pictureView = self.pictureViewList[page];
+    if (pictureView != self.pictureView) {
+        self.pictureView = pictureView;
+        if (self.blockPictureChanged) {
+            self.blockPictureChanged(page, self.pictureView);
+        }
+    }
 }
 
 

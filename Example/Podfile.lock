@@ -1,5 +1,5 @@
 PODS:
-  - NBLShowPicture (0.2.0):
+  - NBLShowPicture (0.3.0):
     - SDWebImage
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - NBLShowPicture (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NBLShowPicture: 335807d78c6f40b72eb79ae913161b74401b970e
+  NBLShowPicture: 76ea5c9d19e6cc8312a5a3040c45da1574818a36
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
 PODFILE CHECKSUM: dfd194c5118872683c9f5d3f4c065970a6fe4b39
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.3

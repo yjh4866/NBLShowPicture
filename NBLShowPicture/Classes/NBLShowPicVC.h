@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NBLPictureView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NBLShowPicVC : UIViewController
+
+@property (nonatomic, copy) void (^blockFirstShow)(NSUInteger page, NBLPictureView *pictureView);
+@property (nonatomic, copy) void (^blockPictureChanged)(NSUInteger page, NBLPictureView *pictureView);
 
 + (NBLShowPicVC *)presentPicsOrPicUrls:(NSArray *)pictures
                       withCurrentIndex:(NSInteger)index
