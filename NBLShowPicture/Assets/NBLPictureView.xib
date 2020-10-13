@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,12 +15,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="jKu-WM-e2V">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <connections>
                         <outlet property="delegate" destination="iN0-l3-epB" id="DTQ-XT-wb6"/>
                     </connections>
                 </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片说明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvG-N6-0Oc">
+                    <rect key="frame" x="20" y="626" width="335" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <gestureRecognizers/>
             <constraints>
@@ -30,11 +34,18 @@
                 <constraint firstItem="jKu-WM-e2V" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="b3x-ch-mdo"/>
                 <constraint firstItem="jKu-WM-e2V" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="gWS-Kc-p0h"/>
                 <constraint firstItem="jKu-WM-e2V" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ggc-5E-qJc"/>
+                <constraint firstItem="RvG-N6-0Oc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="k1i-1Q-lQ5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RvG-N6-0Oc" secondAttribute="bottom" constant="20" id="y1D-tN-ZKz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RvG-N6-0Oc" secondAttribute="trailing" constant="20" id="ySn-A0-Uwx"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="constraintLabelBottom" destination="y1D-tN-ZKz" id="R33-Vr-58E"/>
+                <outlet property="constraintLabelLeft" destination="k1i-1Q-lQ5" id="uGQ-hj-EnF"/>
+                <outlet property="constraintLabelRight" destination="ySn-A0-Uwx" id="Opy-Xr-pWe"/>
+                <outlet property="labelPictureIntro" destination="RvG-N6-0Oc" id="Hx2-gV-7w5"/>
                 <outlet property="scrollView" destination="jKu-WM-e2V" id="5Pa-ZB-gTu"/>
             </connections>
+            <point key="canvasLocation" x="140" y="107"/>
         </view>
     </objects>
 </document>

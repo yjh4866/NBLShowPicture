@@ -10,8 +10,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface NBLPictureView () <UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @property (strong, nonatomic) UIView *imageContainer;
 @property (strong, nonatomic) UIImageView *imageView;
 

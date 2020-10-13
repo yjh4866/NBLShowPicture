@@ -52,6 +52,7 @@
     }
     showPicVC.pictureViewList = marray;
     // 滚动范围
+    showPicVC.scrollView.frame = showPicVC.view.bounds;
     showPicVC.scrollView.contentSize = CGSizeMake(pictures.count * showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
     showPicVC.scrollView.scrollEnabled = pictures.count > 1;
     // 当前要显示的图片
@@ -66,6 +67,9 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSUInteger page = (NSUInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width);
+    if (page >= self.pictureViewList.count) {
+        return;
+    }
     NBLPictureView *pictureView = self.pictureViewList[page];
     if (nil == self.pictureView) {
         self.pictureView = pictureView;
@@ -78,6 +82,9 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     NSUInteger page = (NSUInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width);
+    if (page >= self.pictureViewList.count) {
+        return;
+    }
     NBLPictureView *pictureView = self.pictureViewList[page];
     if (pictureView != self.pictureView) {
         self.pictureView = pictureView;
