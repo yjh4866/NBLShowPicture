@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aSY-wZ-l6d">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="aSY-wZ-l6d" customClass="NBLShowPicVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GSh-pY-XsT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" contentInsetAdjustmentBehavior="never" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="UBQ-zs-51q">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
                                     <outlet property="delegate" destination="aSY-wZ-l6d" id="W7z-nl-bC2"/>
                                 </connections>
@@ -29,7 +29,7 @@
                         <constraints>
                             <constraint firstItem="UBQ-zs-51q" firstAttribute="trailing" secondItem="gEh-rX-8bA" secondAttribute="trailing" id="13F-e3-vVX"/>
                             <constraint firstItem="UBQ-zs-51q" firstAttribute="top" secondItem="GSh-pY-XsT" secondAttribute="top" id="ApI-5d-yN4"/>
-                            <constraint firstItem="gEh-rX-8bA" firstAttribute="bottom" secondItem="UBQ-zs-51q" secondAttribute="bottom" id="MAR-Tb-mGd"/>
+                            <constraint firstAttribute="bottom" secondItem="UBQ-zs-51q" secondAttribute="bottom" id="MAR-Tb-mGd"/>
                             <constraint firstItem="UBQ-zs-51q" firstAttribute="leading" secondItem="gEh-rX-8bA" secondAttribute="leading" id="OH1-yl-m5Q"/>
                         </constraints>
                         <connections>

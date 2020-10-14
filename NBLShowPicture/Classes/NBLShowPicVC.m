@@ -28,7 +28,7 @@
     return YES;
 }
 
-+ (NBLShowPicVC *)presentPicsOrPicUrls:(NSArray *)pictures
++ (NBLShowPicVC *)presentPicsOrPicUrls:(NSArray<UIImage *> *)pictures
                       withCurrentIndex:(NSInteger)index
                                     on:(UIViewController *)viewController
 {
@@ -46,6 +46,7 @@
         } else if ([picture isKindOfClass:[UIImage class]]) {
             pictureView.picture = picture;
         }
+        pictureView.labelPictureIntro.text = @"";
         pictureView.frame = CGRectMake(i*showPicVC.view.bounds.size.width, 0, showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
         [marray addObject:pictureView];
         [showPicVC.scrollView addSubview:pictureView];

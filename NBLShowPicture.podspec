@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NBLShowPicture'
-  s.version          = '0.3.1'
+  s.version          = '0.3.2'
   s.summary          = '全屏查看若干张图片。Show picture in full screen.'
 
 # This description is used to generate tags and improve search results.

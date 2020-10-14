@@ -1,5 +1,5 @@
 PODS:
-  - NBLShowPicture (0.3.0):
+  - NBLShowPicture (0.3.2):
     - SDWebImage
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  NBLShowPicture: 76ea5c9d19e6cc8312a5a3040c45da1574818a36
+  NBLShowPicture: 5f637238a21f2af841634f57d5c14f00d06556c0
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
 PODFILE CHECKSUM: dfd194c5118872683c9f5d3f4c065970a6fe4b39
