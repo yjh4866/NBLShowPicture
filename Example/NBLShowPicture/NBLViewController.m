@@ -42,6 +42,9 @@
             pictureView.picture = [UIImage imageNamed:@"30"];
         }
     };
+    picVC.blockFirstShow = ^(NSUInteger page, NBLPictureView * _Nonnull pictureView) {
+        pictureView.labelPictureIntro.text = @"将任务追加到对应队列中，考虑到队列阻塞等情况，所以这个任务从加入队列到真正执行的时间是不准确的";
+    };
 }
 
 @end

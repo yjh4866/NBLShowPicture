@@ -57,7 +57,9 @@
     showPicVC.scrollView.contentSize = CGSizeMake(pictures.count * showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
     showPicVC.scrollView.scrollEnabled = pictures.count > 1;
     // 当前要显示的图片
-    showPicVC.scrollView.contentOffset = CGPointMake(index*showPicVC.view.bounds.size.width, 0);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        showPicVC.scrollView.contentOffset = CGPointMake(index*showPicVC.view.bounds.size.width, 0);
+    });
     //
     return showPicVC;
 }
