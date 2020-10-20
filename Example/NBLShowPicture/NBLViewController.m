@@ -37,13 +37,13 @@
 - (IBAction)clickShowPicture:(id)sender
 {
     NBLShowPicVC *picVC = [NBLShowPicture presentPicsOrPicUrls:@[@"http://bpic.588ku.com/element_water_img/19/01/06/ff168e0e84240ac09c01c25458bef541.jpg", self.imageView.image] withCurrentIndex:1 on:self];
-    picVC.blockPictureChanged = ^(NSUInteger page, NBLPictureView * _Nonnull pictureView) {
+    picVC.blockShowPicture = ^(NSUInteger page, NBLPictureView * _Nonnull pictureView) {
         if (page == 0) {
+            pictureView.labelPictureIntro.text = @"将任务追加到对应队列中，考虑到队列阻塞等情况，所以这个任务从加入队列到真正执行的时间是不准确的";
+        }
+        else {
             pictureView.picture = [UIImage imageNamed:@"30"];
         }
-    };
-    picVC.blockFirstShow = ^(NSUInteger page, NBLPictureView * _Nonnull pictureView) {
-        pictureView.labelPictureIntro.text = @"将任务追加到对应队列中，考虑到队列阻塞等情况，所以这个任务从加入队列到真正执行的时间是不准确的";
     };
 }
 

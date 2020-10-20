@@ -57,8 +57,12 @@
     showPicVC.scrollView.contentSize = CGSizeMake(pictures.count * showPicVC.view.bounds.size.width, showPicVC.view.bounds.size.height);
     showPicVC.scrollView.scrollEnabled = pictures.count > 1;
     // 当前要显示的图片
+    showPicVC.scrollView.contentOffset = CGPointMake(index*showPicVC.view.bounds.size.width, 0);
+    showPicVC.pictureView = showPicVC.pictureViewList[index];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        showPicVC.scrollView.contentOffset = CGPointMake(index*showPicVC.view.bounds.size.width, 0);
+        if (showPicVC.blockShowPicture) {
+            showPicVC.blockShowPicture(index, showPicVC.pictureView);
+        }
     });
     //
     return showPicVC;
@@ -66,21 +70,6 @@
 
 
 #pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    NSUInteger page = (NSUInteger)(scrollView.contentOffset.x / scrollView.bounds.size.width);
-    if (page >= self.pictureViewList.count) {
-        return;
-    }
-    NBLPictureView *pictureView = self.pictureViewList[page];
-    if (nil == self.pictureView) {
-        self.pictureView = pictureView;
-        if (self.blockFirstShow) {
-            self.blockFirstShow(page, self.pictureView);
-        }
-    }
-}
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -91,8 +80,8 @@
     NBLPictureView *pictureView = self.pictureViewList[page];
     if (pictureView != self.pictureView) {
         self.pictureView = pictureView;
-        if (self.blockPictureChanged) {
-            self.blockPictureChanged(page, self.pictureView);
+        if (self.blockShowPicture) {
+            self.blockShowPicture(page, self.pictureView);
         }
     }
 }
